@@ -1,5 +1,6 @@
+//jshint esversion:6
 import React, { Component } from 'react';
-import CardModal from './cardModal.js'
+import CardModal from './cardModal.js';
 import './card.css';
 
 
@@ -13,7 +14,7 @@ class CardSmall extends Component {
     super(props);
     this.state = {
       target: this.props.source
-    }
+    };
   }
 
 //function that converts the numeral price-range to text values or displays N.A. if no price range was indicated
@@ -37,7 +38,7 @@ class CardSmall extends Component {
       priceLevel ='N.A.'
     }
 
-    return(priceLevel)
+    return(priceLevel);
   }
 
   //For aesthetic purposes the address string is split up into two parts:
@@ -45,7 +46,7 @@ class CardSmall extends Component {
   //Postcode and city (splitted[1])
   splitAdress = (address) => {
     var splitted = address.split(',');
-    return(<p>{splitted[0]}<br />{splitted[1]}</p>)
+    return(<p className='cardSmallH3'>{splitted[0]}<br />{splitted[1]}</p>);
   }
 
   //JSON object from which this component is created gets passed through it's own modal/detailpage
@@ -56,14 +57,14 @@ class CardSmall extends Component {
 
       <div className='cardSmall'>
 
-        <div className='cardSmallImage'><img className='thumbnail' src = { tempImage }/></div>
+        <div className='cardSmallImage'><img className='thumbnail' alt='tempImage' src = { tempImage }/></div>
 
         <div className='cardSmallText'>
           <div className='cardSmallHeader'><h2>{ this.state.target.name }</h2></div>
           <div className='cardSmallPar'>
             <p className='cardSmallH3'>Rating: {this.state.target.rating}</p>
             <p className='cardSmallH3'>Price-range: {this.priceCheck(this.state.target.price_level)}</p>
-            <p className='cardSmallH3'>{this.splitAdress(this.state.target.address)}</p>
+            {this.splitAdress(this.state.target.address)}
             <a className='cardSmallH4' href={this.state.target.website}>To website</a>
             <p className='cardSmallH4'>{this.state.target.phone_number}</p>
           </div>
