@@ -13,8 +13,18 @@ class CardSmall extends Component {
   constructor(props){
     super(props);
     this.state = {
-      target: this.props.source
+      target: this.props.source,
+      SplittedAdress:[],
+      priceRange:''
     };
+  }
+
+  componentDidMount() {
+    var priceLevel = this.priceCheck(this.state.target.price_level);
+    this.setState({priceRange: priceLevel});
+
+    var splitted = this.splitAdress(this.state.target.address);
+    this.setState({SplittedAdress: splitted});
   }
 
 //function that converts the numeral price-range to text values or displays N.A. if no price range was indicated
@@ -46,7 +56,7 @@ class CardSmall extends Component {
   //Postcode and city (splitted[1])
   splitAdress = (address) => {
     var splitted = address.split(',');
-    return(<p className='cardSmallH3'>{splitted[0]}<br />{splitted[1]}</p>);
+    return (splitted)
   }
 
   //JSON object from which this component is created gets passed through it's own modal/detailpage
@@ -63,13 +73,13 @@ class CardSmall extends Component {
           <div className='cardSmallHeader'><h2>{ this.state.target.name }</h2></div>
           <div className='cardSmallPar'>
             <p className='cardSmallH3'>Rating: {this.state.target.rating}</p>
-            <p className='cardSmallH3'>Price-range: {this.priceCheck(this.state.target.price_level)}</p>
-            {this.splitAdress(this.state.target.address)}
+            <p className='cardSmallH3'>Price-range: {this.state.priceRange}</p>
+            <p className='cardSmallH3'>{this.state.SplittedAdress[0]}<br />{this.state.SplittedAdress[1]}</p>
             <a className='cardSmallH4' href={this.state.target.website}>To website</a>
             <p className='cardSmallH4'>{this.state.target.phone_number}</p>
           </div>
 
-          <CardModal source={this.state.target} />
+          <CardModal source={this.state.target} newAddress={this.state.SplittedAdress} priceRange={this.state.priceRange}/>
         </div>
       </div>
     )

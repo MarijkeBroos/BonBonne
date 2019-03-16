@@ -10,21 +10,50 @@ class RestaurantAPI extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: data};
+      restaurants: data
+    };
+
   }
 
+
+
+  //Function that resets the printed content to it's original state
+  reset=()=>{
+    this.setState((prevState, props) => ({
+      restaurants: data
+    }));
+  }
+
+  //OnClick function that sorts the original data
+  sort=()=>{
+    this.reset();
+
+    var sortedArray = [];
+
+    
+
+  }
+
+  //OnClick function that returns 6 random restaurants from the original data file
   wildCards=()=>{
-    var newArray = [];
+    //To prevent multiple random functions from stacking on top of each other, a reset is done
+    this.reset();
+
+    var randomArray = [];
 
     for (var i = 5; i > 0 ; i--){
-      var random = Math.floor((Math.random() * (this.state.restaurants.length)) + 1);
-      newArray.push(this.state.restaurants[random]);
+      var random = Math.floor((Math.random() * (data.length)) + 1);
+      randomArray.push(data[random]);
     }
 
-    this.printContent(newArray);
+    this.setState((prevState, props) => ({
+      restaurants: randomArray
+    }));
+
 
   }
 
+  //Function that takes the array and converts it to divs
   printContent() {
     var printedArray = [];
 
@@ -40,6 +69,7 @@ class RestaurantAPI extends Component {
       <div className = "RestaurantAPI">
         <div>
           <button onClick={this.wildCards}>Show suggestions</button>
+          <button onClick={this.reset}>Reset</button>
           {this.printContent()}
         </div>
       </div>

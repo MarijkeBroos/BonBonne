@@ -63,6 +63,18 @@
   padding: 0px;
 }
 
+.cardBigH2{
+  font-size: 1em;
+  margin:0px;
+  padding: 0px;
+}
+
+.cardBigH3{
+  font-size: 0.9em;
+  margin:0px;
+  padding: 0px;
+}
+
 .infoButton{
   font-family: 'Source Sans Pro', sans-serif;
   color: #777;

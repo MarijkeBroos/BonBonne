@@ -26,33 +26,6 @@ export default class CardModal extends React.Component {
       });
     };
 
-    priceCheck = (price) => {
-      var priceLevel = '';
-      switch (price) {
-        case 1:
-          priceLevel = 'Low'
-          break;
-        case 2:
-          priceLevel = 'Average'
-          break;
-        case 3:
-          priceLevel = 'High'
-          break;
-        default:
-          priceLevel = 'N.A.'
-      }
-      return (priceLevel)
-    }
-
-    splitAdress = (address) => {
-      var splitted = address.split(',');
-      return ( < p > {
-          splitted[0]
-        } < br / > {
-          splitted[1]
-        } < /p>)
-      }
-
       render() {
         const {
           open
@@ -86,11 +59,13 @@ export default class CardModal extends React.Component {
                 {this.state.source.opening_hours[7]}
               </div>
               <div className='info'>
-                <p className='cardSmallH2'>Rating: {this.state.source.rating}</p>
-                <p className='cardSmallH2'>Price - range: {this.priceCheck(this.state.source.price_level)}</p>
-                <p className='cardSmallH3'>{this.splitAdress(this.state.source.address)}</p>
-                <a className='cardSmallH4' href={this.state.source.website}>To website </a>
-                <p className='cardSmallH4'>{this.state.source.phone_number}</p>
+                <p className='cardBigH2'>Rating: {this.state.source.rating}</p>
+                <p className='cardBigH2'>Price - range: {this.props.priceRange}</p>
+                <p className='cardBigH3'>{this.props.newAddress[0]} <br/> {this.props.newAddress[1]}</p>
+                <br/>
+                <br/>
+                <a className='cardBigH3' href={this.state.source.website}>To website </a>
+                <p className='cardBigH3'>{this.state.source.phone_number}</p>
               </div>
             </div>
               <button open={open} className='closeButton' onClick={this.onCloseModal}>CLOSE</button>
