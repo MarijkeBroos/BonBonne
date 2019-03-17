@@ -19,6 +19,7 @@ class CardSmall extends Component {
     };
   }
 
+//Along with render of the component the price and adress are calculated and stored
   componentDidMount() {
     var priceLevel = this.priceCheck(this.state.target.price_level);
     this.setState({priceRange: priceLevel});
@@ -61,7 +62,6 @@ class CardSmall extends Component {
 
   //JSON object from which this component is created gets passed through it's own modal/detailpage
   //Button to open the modal is included in the CardModal component
-
   render() {
     return (
 

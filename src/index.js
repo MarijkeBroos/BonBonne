@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RestaurantAPI from './RestaurantAPI';
+import BonBonne from './BonBonne';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<RestaurantAPI />, document.getElementById('root'));
+ReactDOM.render(<BonBonne />, document.getElementById('root'));
 
 serviceWorker.unregister();

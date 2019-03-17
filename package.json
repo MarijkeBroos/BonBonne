@@ -1,8 +1,8 @@
 {
-  "name": "restaurant-api",
-  "version": "0.1.0",
+  "name": "BonBonne",
+  "version": "0.2.0",
   "private": true,
-  "homepage": "http://marijkebroos.github.io/Restaurant-Api/",
+  "homepage": "http://marijkebroos.github.io/BonBonne/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.4",
