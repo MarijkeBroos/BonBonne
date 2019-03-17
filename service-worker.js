@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Restaurant-Api/precache-manifest.ff70f0304ddb58ad1ceb5d1eb93285d0.js"
+  "/BonBonne/precache-manifest.3e37d94a8b3c616017cf50f99cba663b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Restaurant-Api/index.html", {
+workbox.routing.registerNavigationRoute("/BonBonne/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

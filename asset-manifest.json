@@ -1,15 +1,14 @@
 {
-  "main.css": "/Restaurant-Api/static/css/main.df2ed3df.chunk.css",
-  "main.js": "/Restaurant-Api/static/js/main.31ff05e8.chunk.js",
-  "main.js.map": "/Restaurant-Api/static/js/main.31ff05e8.chunk.js.map",
-  "runtime~main.js": "/Restaurant-Api/static/js/runtime~main.0e334482.js",
-  "runtime~main.js.map": "/Restaurant-Api/static/js/runtime~main.0e334482.js.map",
-  "static/js/2.931077ea.chunk.js": "/Restaurant-Api/static/js/2.931077ea.chunk.js",
-  "static/js/2.931077ea.chunk.js.map": "/Restaurant-Api/static/js/2.931077ea.chunk.js.map",
-  "index.html": "/Restaurant-Api/index.html",
-  "precache-manifest.ff70f0304ddb58ad1ceb5d1eb93285d0.js": "/Restaurant-Api/precache-manifest.ff70f0304ddb58ad1ceb5d1eb93285d0.js",
-  "service-worker.js": "/Restaurant-Api/service-worker.js",
-  "static/css/main.df2ed3df.chunk.css.map": "/Restaurant-Api/static/css/main.df2ed3df.chunk.css.map",
-  "static/media/logo.svg": "/Restaurant-Api/static/media/logo.5d5d9eef.svg",
-  "static/media/restaurant.jpeg": "/Restaurant-Api/static/media/restaurant.e8c28c46.jpeg"
+  "main.css": "/BonBonne/static/css/main.92a5a5fd.chunk.css",
+  "main.js": "/BonBonne/static/js/main.3cd406f7.chunk.js",
+  "main.js.map": "/BonBonne/static/js/main.3cd406f7.chunk.js.map",
+  "runtime~main.js": "/BonBonne/static/js/runtime~main.c07618cb.js",
+  "runtime~main.js.map": "/BonBonne/static/js/runtime~main.c07618cb.js.map",
+  "static/js/2.0311b00f.chunk.js": "/BonBonne/static/js/2.0311b00f.chunk.js",
+  "static/js/2.0311b00f.chunk.js.map": "/BonBonne/static/js/2.0311b00f.chunk.js.map",
+  "index.html": "/BonBonne/index.html",
+  "precache-manifest.3e37d94a8b3c616017cf50f99cba663b.js": "/BonBonne/precache-manifest.3e37d94a8b3c616017cf50f99cba663b.js",
+  "service-worker.js": "/BonBonne/service-worker.js",
+  "static/css/main.92a5a5fd.chunk.css.map": "/BonBonne/static/css/main.92a5a5fd.chunk.css.map",
+  "static/media/restaurant.jpeg": "/BonBonne/static/media/restaurant.e8c28c46.jpeg"
 }
