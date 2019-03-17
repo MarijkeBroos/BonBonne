@@ -1,14 +1,14 @@
 {
-  "main.css": "/BonBonne/static/css/main.92a5a5fd.chunk.css",
-  "main.js": "/BonBonne/static/js/main.3cd406f7.chunk.js",
-  "main.js.map": "/BonBonne/static/js/main.3cd406f7.chunk.js.map",
+  "main.css": "/BonBonne/static/css/main.6450f792.chunk.css",
+  "main.js": "/BonBonne/static/js/main.1ac69e8e.chunk.js",
+  "main.js.map": "/BonBonne/static/js/main.1ac69e8e.chunk.js.map",
   "runtime~main.js": "/BonBonne/static/js/runtime~main.c07618cb.js",
   "runtime~main.js.map": "/BonBonne/static/js/runtime~main.c07618cb.js.map",
   "static/js/2.0311b00f.chunk.js": "/BonBonne/static/js/2.0311b00f.chunk.js",
   "static/js/2.0311b00f.chunk.js.map": "/BonBonne/static/js/2.0311b00f.chunk.js.map",
   "index.html": "/BonBonne/index.html",
-  "precache-manifest.3e37d94a8b3c616017cf50f99cba663b.js": "/BonBonne/precache-manifest.3e37d94a8b3c616017cf50f99cba663b.js",
+  "precache-manifest.c234e67f339bb0006487779f37e0eed1.js": "/BonBonne/precache-manifest.c234e67f339bb0006487779f37e0eed1.js",
   "service-worker.js": "/BonBonne/service-worker.js",
-  "static/css/main.92a5a5fd.chunk.css.map": "/BonBonne/static/css/main.92a5a5fd.chunk.css.map",
+  "static/css/main.6450f792.chunk.css.map": "/BonBonne/static/css/main.6450f792.chunk.css.map",
   "static/media/restaurant.jpeg": "/BonBonne/static/media/restaurant.e8c28c46.jpeg"
 }
