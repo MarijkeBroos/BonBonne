@@ -21,6 +21,11 @@ An application that takes a JSON list of restaurants as input and displays it in
 
 *Purpose of this project is to demonstrate my skills in Front End development and share my work process.*
 
+## Demo
+To see the application in action:<br>
+https://rebeccamarijkebroos.github.io/BonBonne/
+
+
 ## Features
 Current features:
 * The application renders cards components using data from a JSON file
