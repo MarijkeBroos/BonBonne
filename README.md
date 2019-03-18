@@ -1,68 +1,154 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Bon Bonne
+Documentation by <br>
+Rebecca Marijke Broos
 
-In the project directory, you can run:
+*Updated on 03/18/2019*
 
-### `npm start`
+## Contents
+Description project<br>
+Demo<br>
+Features<br>
+Instructions<br>
+Planning / Log<br>
+Design<br>
+Flowchart<br>
+Known issues<br>
+Future implementations
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Description project
+An application that takes a JSON list of restaurants as input and displays it in a React card viewing system. Cards contain detailed information about the restaurant.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+*Purpose of this project is to demonstrate my skills in Front End development and share my work process.*
 
-### `npm test`
+## Features
+Current features:
+* The application renders cards components using data from a JSON file
+* Clicking Info on the card opens up a card in overlay view with more details about the restaurant
+* Clicking the random button will return 6 random restaurants
+* Cards can be filtered on rating of 4 or over
+* Cards can be filtered on Low price range
+* Cards can be sorted on Name
+* Cards can be sorted on Rating
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instructions
+#### Required input
+The application requires a JSON file set in BonBonne.js. 
+Object must contain the following format as minimal input:
 
-### `npm run build`
+```[{
+   "Opening_hours":
+["Monday: 11:00 AM – 3:00 PM", 
+"Tuesday: 11:00 AM – 3:00 PM",
+"Wednesday: 11:00 AM – 3:00 PM", 
+"Thursday: 11:00 AM – 3:00 PM", 
+"Friday: 11:00 AM – 3:00 PM", 
+"Saturday: Closed", 
+"Sunday: Closed"],
+   	"address": "Repslagargatan 8, 118 46 Stockholm",    
+"phone_number": "08-641 20 77"
+     	"name": "String",
+    	"price_level": 1, //Value between 1 and 3. 1 = Low, 2 = Average, 3 = High
+   	 "rating": 4.4,
+  	"website": "http://www.tamarindo.se/",
+    	"photo": "https://cdn.pixabay.com/photo/2016/11/18/22/21/architecture-1837150_1280.jpg",
+    	"id": 0,
+}]
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+#### Required dependencies and recreating development environment
+The application was built using Node. Running NPX create-react-app also resulted in a large node_modules folder which I haven’t included on the Github repository.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Suggested work-around to recreate development environment:
+1. Using terminal and Node run: npx create-react-app BonBonne
+2. Delete all files and folders except the node_modules folder
+3. Download and extract Github repository files to root directory
+4. Folder structure should now look like this:
+```
+* node_modules		
+* public
+	> index.html
+	> manifest.json
+	> restaurant-icon.png
+* src
+	> components
+		>> card.css
+		>> cardList.js
+		>> cardModal.js
+		>> restaurant.jpeg
+	> BonBonne.js
+	> BonBonne.test.js
+	> db.json
+* Index.js
+* serviceWorker.js
+* .gitignore
+* package-lock.json
+* Package.json
+* Yarn.lock
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. In terminal navigate to created directory
+5. Install required dependencies using the terminal:<br>
+`npm install react-responsive-modal`
+6. Run the development server:<br>
+ `npm start` (may need to open browser manually first)
+ 
+#### Overview of used dependencies and their versions:
+	React version 16.8.4
+    React Dom version 16.8.4
+    React Responsive Modal version 3.6.0
+    React Scripts 2.1.8
+    
+## Planning / Log
+To make efficient use of my time I broke down the project into the next stages:
 
-### `npm run eject`
+##### Define prerequisites and familiarize Docker and API input
+Orientation phase. Both JSON and Docker were new to me at the time. Understanding JSON went smoothly because of my experience with Javascript. I managed to get Docker running as well, but when trying to run my React application in the Express environment the html was parsed as text instead of code. I decided to prioritize the building of the application over the implementation in express. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Plan
+Highest priority was given to creating a functioning application that showed the restaurant in a list form and in a detail form. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Wireframe and design
+Designing structure for the project. The red thread in the structure is the flow of the original JSON object which follows a parent to child pattern. Structuring the project like this will allow child features to still make use of all original data provided at the top of the tree. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### Pseudo Code and prototyping
+I started with plotting down components in a comment form and making use of the alert function to test certain features. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### Iterate and test, rinse and repeat
+With the planning and structure in place I built out the components and tested them. I kept track of the issues and features the section below.
 
-## Learn More
+## Known issues and future features
+#### Known issues:
+Opening hours with more than 40 characters per index cause a shift in layout of the detailed view
+“To website” text is displayed when no website was provided
+No indication is given when no opening hours are available 
+Use of random function could result in a Type error
+Reset function doesn’t restore original array after use of sort or filter.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Planned implementations
+* Algorithm for splitting the address is noted twice. Once in the list file and again in the detail file.
+	* Desired solution: Pass splitted address along to the modal 
+	* *Added on 3/15/2019*
+* Algorithm for converting numeral price range to text is noted twice. Once in the list file and again in the detail file
+	* Desired solution: Pass converted price range along to the modal
+	* *Added on 3/15/2019*
+* Mapping function is done directly in the main component
+	 * Desired solution: Result of mapping stored in variable so result can be accessed by other functions such as sort or filter
+	* *Added on 3/15/2019*
+* A feature that lets the user sort the list of restaurants based on relevant attributes
+	* *Added on 3/16/2019*
+* A feature which allows the user to filter out restaurants based on relevant attributes
+	* *Added on 3/16/2019*
+* Restaurant roulette: button to display a set of randomized restaurants 
+	* *Added on 3/16/2019* 
+* Discard: Card button to delete card from results to help user narrow down the ideal restaurant 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
